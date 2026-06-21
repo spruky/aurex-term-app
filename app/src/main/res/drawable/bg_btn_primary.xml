@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- #connectBtn: linear-gradient(135deg,#7a0000,var(--red)). -->
+<!-- #connectBtn: linear-gradient(135deg, #7a0000, red). -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <gradient
         android:startColor="#7A0000"
