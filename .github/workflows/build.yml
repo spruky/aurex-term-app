@@ -87,12 +87,13 @@ jobs:
           set -euo pipefail
           dest="app/src/main/assets/bootstrap"
           mkdir -p "$dest"
-          base="https://github.com/termux/proot-distro/releases/download/${PROOT_DISTRO_TAG}"
-          # arm64 rootfs covers the primary target; the bundled tarball is
-          # arch-tagged and proot uses the matching one at runtime if needed.
-          url="${base}/debian-aarch64-pd-${PROOT_DISTRO_TAG}.tar.xz"
-          echo "Fetching $url"
-          curl -fL "$url" -o "$dest/rootfs.tar.xz"
+          # Export the official Debian arm64 image as the proot rootfs. Robust and
+          # reproducible — proot-distro moved its release hosting, so we no longer
+          # depend on it. create+export never executes the image, so no QEMU needed.
+          docker pull --platform linux/arm64 debian:bookworm-slim
+          cid=$(docker create --platform linux/arm64 debian:bookworm-slim)
+          docker export "$cid" | xz -T0 -c > "$dest/rootfs.tar.xz"
+          docker rm "$cid"
           ls -lh "$dest"
 
       # --- optional signing keystore ----------------------------------------
