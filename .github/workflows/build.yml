@@ -97,7 +97,7 @@ jobs:
 
       # --- optional signing keystore ----------------------------------------
       - name: Decode signing keystore
-        if: ${{ inputs.sign && secrets.AUREX_KEYSTORE_BASE64 != '' }}
+        if: ${{ inputs.sign }}
         env:
           AUREX_KEYSTORE_BASE64: ${{ secrets.AUREX_KEYSTORE_BASE64 }}
         run: |
