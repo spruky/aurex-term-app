@@ -1,0 +1,25 @@
+# Gradle / Android build output
+.gradle/
+build/
+app/build/
+*/build/
+local.properties
+captures/
+.cxx/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# --- CI-fetched payloads — NEVER commit (build.yml drops these at build time) ---
+# Native proot binaries (fetched from the Termux mirror into jniLibs).
+app/src/main/jniLibs/
+# Debian rootfs tarball (fetched from proot-distro releases into assets).
+app/src/main/assets/bootstrap/
+
+# --- Signing secrets — NEVER commit (injected from GitHub repo secrets) ---
+*.keystore
+*.jks
+keystore.properties
+release.keystore

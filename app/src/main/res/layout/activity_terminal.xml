@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000">
+
+    <!-- toolbar (.term-toolbar) -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/s1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="6dp">
+
+            <TextView android:id="@+id/kCtrl" style="@style/TbKey" android:text="CTRL" />
+            <TextView android:id="@+id/kEsc" style="@style/TbKey" android:text="ESC" />
+            <TextView android:id="@+id/kTab" style="@style/TbKey" android:text="TAB" />
+            <TextView android:id="@+id/kUp" style="@style/TbKey" android:text="▲" />
+            <TextView android:id="@+id/kDown" style="@style/TbKey" android:text="▼" />
+            <TextView android:id="@+id/kLeft" style="@style/TbKey" android:text="◀" />
+            <TextView android:id="@+id/kRight" style="@style/TbKey" android:text="▶" />
+            <TextView android:id="@+id/kCtrlC" style="@style/TbKey" android:text="^C" />
+            <TextView android:id="@+id/kClear" style="@style/TbKey" android:text="CLR" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- output (#termContainer) -->
+    <ScrollView
+        android:id="@+id/termScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000000"
+        android:padding="6dp">
+
+        <TextView
+            android:id="@+id/termOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textColor="@color/text"
+            android:textSize="12sp"
+            android:textIsSelectable="true"
+            android:typeface="monospace"
+            android:lineSpacingMultiplier="1.05"
+            android:text="" />
+    </ScrollView>
+
+    <!-- input row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/s1"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="❯"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/termInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:fontFamily="monospace"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text3"
+            android:textSize="13sp"
+            android:hint="type a command…"
+            android:imeOptions="actionSend|flagNoExtractUi"
+            android:inputType="textNoSuggestions|textVisiblePassword"
+            android:maxLines="1"
+            android:importantForAutofill="no" />
+    </LinearLayout>
+</LinearLayout>

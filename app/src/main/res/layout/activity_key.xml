@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="28dp">
+
+        <!-- card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_icon_tile"
+                android:gravity="center"
+                android:text="🔑"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/key_title"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/key_sub"
+                android:textColor="@color/text2"
+                android:textSize="12sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <!-- ===== sign-in form (shown when no key yet) ===== -->
+            <LinearLayout
+                android:id="@+id/signInBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/inEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_key_field"
+                    android:paddingHorizontal="14dp"
+                    android:hint="@string/key_email_hint"
+                    android:textColorHint="@color/text3"
+                    android:textColor="@color/text"
+                    android:textSize="13sp"
+                    android:inputType="textEmailAddress"
+                    android:autofillHints="emailAddress"
+                    android:importantForAutofill="yes" />
+
+                <EditText
+                    android:id="@+id/inPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_key_field"
+                    android:paddingHorizontal="14dp"
+                    android:hint="@string/key_password_hint"
+                    android:textColorHint="@color/text3"
+                    android:textColor="@color/text"
+                    android:textSize="13sp"
+                    android:inputType="textPassword"
+                    android:autofillHints="password"
+                    android:importantForAutofill="yes" />
+
+                <Button
+                    android:id="@+id/btnSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:text="@string/key_signin"
+                    android:textColor="#FFFFFF"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    style="?android:attr/borderlessButtonStyle" />
+
+                <Button
+                    android:id="@+id/btnPaste"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn_ghost"
+                    android:text="@string/key_paste"
+                    android:textColor="@color/text2"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    style="?android:attr/borderlessButtonStyle" />
+            </LinearLayout>
+
+            <!-- ===== key readout (shown once we have a key) ===== -->
+            <LinearLayout
+                android:id="@+id/keyBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/key_your_key"
+                    android:textColor="@color/text3"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.16"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/keyValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_key_field"
+                    android:padding="14dp"
+                    android:text="@string/key_placeholder"
+                    android:textColor="@color/red"
+                    android:textSize="13sp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.04"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/keyStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="11sp"
+                    android:text=""
+                    android:textColor="@color/text2" />
+
+                <Button
+                    android:id="@+id/btnCopy"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_btn_primary"
+                    android:text="@string/key_copy"
+                    android:textColor="#FFFFFF"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    style="?android:attr/borderlessButtonStyle" />
+
+                <Button
+                    android:id="@+id/btnVerify"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn_ghost"
+                    android:text="@string/key_verify"
+                    android:textColor="@color/text2"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    style="?android:attr/borderlessButtonStyle" />
+
+                <Button
+                    android:id="@+id/btnSignOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn_ghost"
+                    android:text="@string/key_signout"
+                    android:textColor="@color/text2"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    style="?android:attr/borderlessButtonStyle" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="18dp"
+            android:text="@string/key_footer"
+            android:textColor="@color/text3"
+            android:textSize="10sp"
+            android:lineSpacingMultiplier="1.4" />
+    </LinearLayout>
+</ScrollView>

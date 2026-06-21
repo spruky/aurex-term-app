@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aurex Term</string>
+    <string name="brand">AUREX</string>
+    <string name="brand_term">TERM</string>
+    <string name="tagline">Debian, in your pocket.</string>
+
+    <string name="btn_terminal">Terminal</string>
+    <string name="btn_terminal_sub">Drop into the embedded Debian shell</string>
+    <string name="btn_key">Key</string>
+    <string name="btn_key_sub">Get your key for axcode and term</string>
+
+    <!-- Key screen -->
+    <string name="key_title">Your Aurex Key</string>
+    <string name="key_sub">Sign in with your Aurex account to get your terminal key. The same key works in axcode and the term pip package.</string>
+    <string name="key_email_hint">Email</string>
+    <string name="key_password_hint">Password</string>
+    <string name="key_signin">Sign in &amp; get key</string>
+    <string name="key_paste">I already have a key</string>
+    <string name="key_your_key">YOUR KEY</string>
+    <string name="key_copy">Copy key</string>
+    <string name="key_copied">Key copied</string>
+    <string name="key_verify">Verify key</string>
+    <string name="key_signout">Sign out</string>
+    <string name="key_placeholder">— — — —</string>
+    <string name="key_footer">Same key works in axcode and the term pip package. Password is used once to fetch the key and never stored.</string>
+
+    <!-- Terminal screen -->
+    <string name="term_booting">Preparing Debian…</string>
+    <string name="term_first_run">First launch unpacks the Debian rootfs. This happens once.</string>
+</resources>
